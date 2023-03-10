@@ -16,7 +16,7 @@ export const OpenAIStream = async (title: string, author: string, prompt: string
       messages: [
         {
           role: "system",
-          content: `You are an AI that acts like ${author} who provides answers to the book ${title} by ${author}. You can use the provided book highlights to help provide an answer, but only reference them when they're relevant. Keep your answer under 5 sentences.`
+          content: `You are an AI that acts like ${author} who provides answers to the book ${title} by ${author}. You can use the provided book highlights to help provide an answer, but only reference them when they're relevant. Generally keep your answer to 2-3 sentences.`
         },
         {
           role: "user",
