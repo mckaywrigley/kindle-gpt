@@ -42,6 +42,8 @@ The 5 results are used to create a prompt that feeds into GPT-3.5-turbo.
 
 And finally, you get your answer!
 
+Code is 100% open source.
+
 ## Data
 
 All data is stored locally.
