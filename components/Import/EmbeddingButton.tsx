@@ -31,28 +31,32 @@ export const EmbeddingButton: FC<EmbeddingButtonProps> = ({ book, apiKey, onEmbe
       for (let j = 0; j < section.highlights.length; j++) {
         const highlight = section.highlights[j];
 
-        const res = await openai.createEmbedding({
-          model: "text-embedding-ada-002",
-          input: `${section.sectionTitle}. ${highlight.highlight}`
-        });
+        const textToEmbed = `${section.sectionTitle}. ${highlight.highlight}`;
 
-        const [{ embedding }] = res.data.data;
+        if (textToEmbed.length / 4 < 6000) {
+          const res = await openai.createEmbedding({
+            model: "text-embedding-ada-002",
+            input: `${section.sectionTitle}. ${highlight.highlight}`
+          });
 
-        if (!embedding) {
-          continue;
+          const [{ embedding }] = res.data.data;
+
+          if (!embedding) {
+            continue;
+          }
+
+          const newEmbedding: KindleEmbedding = {
+            title: notebook.title,
+            author: notebook.author,
+            sectionTitle: section.sectionTitle,
+            type: highlight.type,
+            page: highlight.page,
+            highlight: highlight.highlight,
+            embedding
+          };
+
+          embeddings.push(newEmbedding);
         }
-
-        const newEmbedding: KindleEmbedding = {
-          title: notebook.title,
-          author: notebook.author,
-          sectionTitle: section.sectionTitle,
-          type: highlight.type,
-          page: highlight.page,
-          highlight: highlight.highlight,
-          embedding
-        };
-
-        embeddings.push(newEmbedding);
 
         onLoadingMessageChange(`Embedding ${count} of ${totalCount}`);
         count++;
