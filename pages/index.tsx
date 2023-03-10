@@ -153,7 +153,7 @@ export default function Home() {
             </div>
           )}
 
-          <div className="mt-4">
+          <div className="mt-4 max-w-[750px] mx-auto">
             {book ? (
               <div>
                 {book.embeddings.length > 0 && (
