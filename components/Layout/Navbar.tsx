@@ -13,6 +13,18 @@ export const Navbar: FC = () => {
         </a>
       </div>
       <div className="flex space-x-4">
+        <div className="mr-6">
+          See an
+          <a
+            className="ml-1 underline hover:opacity-50 cursor-pointer"
+            href="https://twitter.com/mckaywrigley/status/1634278243900735488?s=20"
+            target="_blank"
+            rel="noreferrer"
+          >
+            example
+          </a>
+          .
+        </div>
         <a
           className="flex items-center hover:opacity-50"
           href="https://twitter.com/mckaywrigley"
