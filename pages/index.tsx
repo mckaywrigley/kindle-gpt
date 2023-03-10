@@ -26,6 +26,7 @@ export default function Home() {
     }
 
     setLoading(true);
+    setAnswer("");
 
     const configuration = new Configuration({ apiKey });
     const openai = new OpenAIApi(configuration);
@@ -69,7 +70,10 @@ export default function Home() {
 
     Use the following passages from ${book.title} by ${book.author} to help provide an answer to the query: "${query}"
 
+    Passsages:
     ${selected.map((similarity) => similarity.notebookEmbedding.highlight).join("\n\n")}
+
+    Your answer:
     `;
 
     const answerResponse = await fetch("/api/answer", {
