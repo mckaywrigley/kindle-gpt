@@ -49,11 +49,17 @@ export default function Home() {
     similarities = similarities.sort((a, b) => b.similarity - a.similarity);
 
     let length = 0;
+    let count = 0;
 
     const selected = similarities.filter((similarity) => {
       length += similarity.notebookEmbedding.highlight.length;
 
-      return length / 4 < 2000;
+      if (length < 1000 && count < 10) {
+        count++;
+        return true;
+      }
+
+      return false;
     });
 
     setPassages(selected.map((similarity) => similarity.notebookEmbedding));

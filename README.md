@@ -38,7 +38,7 @@ Now you can query your highlights using the search bar.
 
 The 1st step is to get the cosine similarity for your query and all of the highlights.
 
-Then, the most relevant results are returned (maxing out at ~2k tokens).
+Then, the most relevant results are returned (maxing out at ~2k tokens, up to 10).
 
 ### Create Prompt & Generate Answer
 
