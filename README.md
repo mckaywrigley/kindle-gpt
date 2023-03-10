@@ -26,7 +26,7 @@ After parsing is complete, the highlights are ready to be embedded.
 
 Kindle GPT uses [OpenAI Embeddings](https://platform.openai.com/docs/guides/embeddings) (`text-embedding-ada-002`) to generate embeddings for each highlight.
 
-The embedded text is the chapter/section name + the highlighted text. I found this to be the best way to get the most relevant embeddings.
+The embedded text is the chapter/section name + the highlighted text. I found this to be the best way to get the most relevant passages.
 
 You will also receive a downloaded .csv file of your embedded notebook to use wherever you'd like - including for importing to Kindle GPT for later use.
 
