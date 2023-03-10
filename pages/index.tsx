@@ -129,16 +129,29 @@ export default function Home() {
             />
           </div>
 
-          <Import
-            book={book}
-            apiKey={apiKey}
-            onImport={setBook}
-            onEmbedding={setBook}
-            onClick={() => {
-              setAnswer("");
-              setPassages([]);
-            }}
-          />
+          {apiKey.length === 51 ? (
+            <Import
+              book={book}
+              apiKey={apiKey}
+              onImport={setBook}
+              onEmbedding={setBook}
+              onClick={() => {
+                setAnswer("");
+                setPassages([]);
+              }}
+            />
+          ) : (
+            <div className="text-center text-2xl mt-7">
+              Please enter your
+              <a
+                className="ml-2 mr-3 underline hover:opacity-50"
+                href="https://openai.com/product"
+              >
+                OpenAI API key
+              </a>
+              in settings.
+            </div>
+          )}
 
           <div className="mt-4">
             {book ? (

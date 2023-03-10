@@ -2,7 +2,7 @@
 
 AI search & chat on your Kindle highlights.
 
-Supports csv exporting of your embedded data.
+Supports .csv exporting of your embedded data.
 
 ## How It Works
 
@@ -24,9 +24,7 @@ After parsing is complete, the highlights are ready to be embedded.
 
 Kindle GPT uses [OpenAI Embeddings](https://platform.openai.com/docs/guides/embeddings) (`text-embedding-ada-002`) to generate embeddings for each highlight.
 
-The embedded text is the chapter/section name + the highlighted text.
-
-I found this to be the best way to get the most relevant embeddings.
+The embedded text is the chapter/section name + the highlighted text. I found this to be the best way to get the most relevant embeddings.
 
 You will also receive a downloaded .csv file of your embedded notebook to use wherever you'd like - including for importing to Kindle GPT for later use.
 
@@ -53,8 +51,6 @@ Kindle GPT doesn't use a database.
 You can re-import any of your generated .csv files at any time to avoid having to re-embed your notebooks.
 
 ## Running Locally
-
-Here's a quick overview of how to run it locally.
 
 1. Set up OpenAI
 
