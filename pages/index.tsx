@@ -48,16 +48,22 @@ export default function Home() {
 
     similarities = similarities.sort((a, b) => b.similarity - a.similarity);
 
-    const upToTopFive = similarities.slice(0, 5);
+    let length = 0;
 
-    setPassages(upToTopFive.map((similarity) => similarity.notebookEmbedding));
+    const selected = similarities.filter((similarity) => {
+      length += similarity.notebookEmbedding.highlight.length;
+
+      return length / 4 < 2000;
+    });
+
+    setPassages(selected.map((similarity) => similarity.notebookEmbedding));
 
     const prompt = endent`
     You are ${book.author}.
 
     Use the following passages from ${book.title} by ${book.author} to help provide an answer to the query: "${query}"
 
-    ${upToTopFive.map((similarity) => similarity.notebookEmbedding.highlight).join("\n\n")}
+    ${selected.map((similarity) => similarity.notebookEmbedding.highlight).join("\n\n")}
     `;
 
     const answerResponse = await fetch("/api/answer", {
