@@ -4,6 +4,8 @@ AI search & chat on your Kindle highlights.
 
 Supports .csv exporting of your embedded data.
 
+Code is 100% open source.
+
 ## How It Works
 
 ### Export Kindle Notebook
@@ -41,8 +43,6 @@ Then, the 5 most relevant results are returned.
 The 5 results are used to create a prompt that feeds into GPT-3.5-turbo.
 
 And finally, you get your answer!
-
-Code is 100% open source.
 
 ## Data
 
