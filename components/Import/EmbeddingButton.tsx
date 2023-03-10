@@ -33,7 +33,7 @@ export const EmbeddingButton: FC<EmbeddingButtonProps> = ({ book, apiKey, onEmbe
 
         const res = await openai.createEmbedding({
           model: "text-embedding-ada-002",
-          input: highlight.highlight
+          input: `${section.sectionTitle}. ${highlight.highlight}`
         });
 
         const [{ embedding }] = res.data.data;
