@@ -104,7 +104,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Kindle Chat</title>
+        <title>Kindle GPT</title>
         <meta
           name="description"
           content="AI search & chat on your Kindle highlights."
@@ -151,7 +151,6 @@ export default function Home() {
 
                 {loading ? (
                   <>
-                    {" "}
                     <div className="mt-6 w-full">
                       <div className="font-bold text-2xl">Answer</div>
                       <div className="animate-pulse mt-2">

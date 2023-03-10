@@ -9,7 +9,7 @@ export const Navbar: FC = () => {
           className="ml-2 hover:opacity-50"
           href="https://kindle-chat.vercel.app"
         >
-          Kindle Chat
+          Kindle GPT
         </a>
       </div>
       <div className="flex space-x-4">
