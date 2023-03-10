@@ -6,6 +6,8 @@ Supports .csv exporting of your embedded data.
 
 Code is 100% open source.
 
+Note: I recommend using on desktop only.
+
 ## How It Works
 
 ### Export Kindle Notebook
